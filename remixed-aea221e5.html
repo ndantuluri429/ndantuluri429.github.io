@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neha V. Dantuluri - Academic Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: white;
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 0.5rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #3b82f6;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #3b82f6;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateX(5px);
+        }
+
+        .project-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-download {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin: 1rem 0;
+        }
+
+        .cv-download:hover {
+            background: #1e3a8a;
+        }
+
+        .publication {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 4px;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 0.3rem;
+        }
+
+        .publication-meta {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 4px;
+        }
+
+        .contact-item strong {
+            color: #1e3a8a;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav a {
+                border-bottom: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Neha V. Dantuluri</h1>
+        <p>Master's Student | Biomedical Informatics | Harvard Medical School</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="profile-img">📸</div>
+                <div>
+                    <p>Welcome! I am currently pursuing a Master of Medical Science (MMSc) in Biomedical Informatics at Harvard Medical School (2024-2026). My academic journey combines a strong foundation in both biomedical sciences and health informatics.</p>
+                    <p style="margin-top: 1rem;">I completed my undergraduate studies at the University of South Florida's Judy Genshaft Honors College (2020-2024), where I earned dual Bachelor of Science degrees in Biomedical Sciences and Information Science with a concentration in Health Informatics.</p>
+                    <p style="margin-top: 1rem;">My interdisciplinary background positions me at the intersection of healthcare, technology, and data science, where I'm passionate about leveraging informatics to improve patient outcomes and advance medical research.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research Interests</h2>
+            <p>My research spans several key areas:</p>
+            <ul style="margin-top: 1rem; margin-left: 2rem;">
+                <li style="margin: 0.5rem 0;"><strong>Research Area 1:</strong> Brief description of this research focus and its significance.</li>
+                <li style="margin: 0.5rem 0;"><strong>Research Area 2:</strong> Description of another major research interest.</li>
+                <li style="margin: 0.5rem 0;"><strong>Research Area 3:</strong> Additional research focus area.</li>
+            </ul>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            
+            <div class="publication">
+                <div class="publication-title">Title of Your Recent Paper Goes Here</div>
+                <div class="publication-meta">Authors. (2024). Journal Name, Volume(Issue), pages. DOI: xxxx</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Another Important Publication Title</div>
+                <div class="publication-meta">Authors. (2023). Journal Name, Volume(Issue), pages. DOI: xxxx</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Third Publication Example</div>
+                <div class="publication-meta">Authors. (2023). Conference Proceedings, pages. DOI: xxxx</div>
+            </div>
+
+            <p style="margin-top: 1.5rem;"><a href="#" style="color: #3b82f6; text-decoration: none;">View complete publication list →</a></p>
+        </section>
+
+        <section id="projects">
+            <h2>Active Projects</h2>
+            
+            <div class="project-card">
+                <h3>Project Title 1</h3>
+                <p><strong>Funding:</strong> [Funding Agency], [Amount], [Years]</p>
+                <p style="margin-top: 0.5rem;">Brief description of the project goals, methodology, and expected outcomes. This project aims to...</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Title 2</h3>
+                <p><strong>Funding:</strong> [Funding Agency], [Amount], [Years]</p>
+                <p style="margin-top: 0.5rem;">Description of another active research project and its significance to the field.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Title 3</h3>
+                <p><strong>Collaborators:</strong> [Names and Institutions]</p>
+                <p style="margin-top: 0.5rem;">Collaborative project description and current status.</p>
+            </div>
+        </section>
+
+        <section id="cv">
+            <h2>Curriculum Vitae</h2>
+            <p>Download my complete CV for detailed information about my education, research experience, publications, grants, and service activities.</p>
+            <a href="#" class="cv-download">📄 Download CV (PDF)</a>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    yourname@university.edu
+                </div>
+                <div class="contact-item">
+                    <strong>Office</strong>
+                    Building Name, Room 123<br>
+                    University Name<br>
+                    City, State ZIP
+                </div>
+                <div class="contact-item">
+                    <strong>Office Hours</strong>
+                    Tuesdays: 2:00 PM - 4:00 PM<br>
+                    Thursdays: 10:00 AM - 12:00 PM<br>
+                    (or by appointment)
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Neha V. Dantuluri. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Last updated: October 2025</p>
+    </footer>
+</body>
+</html>
