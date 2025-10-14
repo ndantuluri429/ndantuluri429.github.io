@@ -92,7 +92,7 @@
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 300px;
+            grid-template-columns: 300px 1fr;
             gap: 3rem;
             align-items: start;
         }
@@ -225,10 +225,6 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">Neha V. Dantuluri</div>
-    </header>
-
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
@@ -242,12 +238,12 @@
     <div class="container">
         <section id="about">
             <div class="about-grid">
-                <div class="about-content">
-                    <h1>Neha V. Dantuluri</h1>
-                    <p>Hi! I am a 2nd year MMSc Biomedical Informatics candidate at Harvard Medical School. My research focuses on using AI/ML to support clinical decision-making by improving the interpretability and fairness of predictive models deployed in healthcare settings. My work spans multiple clinical domains, with a particular interest in maternal-fetal health.</p>
-                </div>
                 <div class="profile-section">
                     <img src="about-me-image1.jpg" alt="Neha Dantuluri" class="profile-img">
+                </div>
+                <div class="about-content">
+                    <h1>Bio</h1>
+                    <p>Hi! I am a 2nd year MMSc Biomedical Informatics candidate at Harvard Medical School. My research focuses on using AI/ML to support clinical decision-making by improving the interpretability and fairness of predictive models deployed in healthcare settings. My work spans multiple clinical domains, with a particular interest in maternal-fetal health.</p>
                 </div>
             </div>
         </section>
@@ -262,6 +258,10 @@
 
         <section id="projects">
             <h2>Research Areas</h2>
+
+            <div class="project-card">
+                <h3>Development and Validation of Stillbirth Risk Prediction using Machine Learning</h3>
+            </div>
             
             <div class="project-card">
                 <h3>AI-EFM: Deep Learning to Predict Intrapartum Fetal Distress</h3>
@@ -298,7 +298,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Neha V. Dantuluri. All rights reserved.</p>
+        <p>&copy; 2025 Neha Dantuluri. All rights reserved.</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Last updated: October 2025</p>
     </footer>
 </body>
