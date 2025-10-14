@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neha V. Dantuluri - Academic Portfolio</title>
+    <title>Neha Dantuluri - Academic Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -19,21 +19,17 @@
         }
 
         header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e3a8a;
         }
 
         nav {
@@ -89,28 +85,43 @@
         section h2 {
             color: #1e3a8a;
             margin-bottom: 1.5rem;
-            font-size: 2rem;
+            font-size: 1.3rem;
             border-bottom: 3px solid #3b82f6;
             padding-bottom: 0.5rem;
         }
 
         .about-grid {
             display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 2rem;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
             align-items: start;
         }
 
-        .profile-img {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
-            border-radius: 8px;
+        .profile-section {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #3b82f6;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .about-content h1 {
+            color: #1e3a8a;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-content .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
         }
 
         .project-card {
@@ -129,6 +140,7 @@
         .project-card h3 {
             color: #1e3a8a;
             margin-bottom: 0.5rem;
+            font-size: 1rem;
         }
 
         .cv-download {
@@ -214,62 +226,41 @@
 </head>
 <body>
     <header>
-        <h1>Neha V. Dantuluri</h1>
-        <p>Master's Student | Biomedical Informatics | Harvard Medical School</p>
+        <div class="header-content">Neha Dantuluri</div>
     </header>
 
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
             <li><a href="#publications">Publications</a></li>
+            <li><a href="#projects">Research Areas</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <section id="about">
-            <h2>Bio</h2>
             <div class="about-grid">
-                <img src="about-me-image1.jpg" alt="Neha Dantuluri" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
-                <div>
+                <div class="profile-section">
+                    <img src="about-me-image1.jpg" alt="Neha Dantuluri" class="profile-img">
+                </div>
+                <div class="about-content">
+                    <h1>Neha Dantuluri</h1>
                     <p>Hi! I am a 2nd year MMSc Biomedical Informatics candidate at Harvard Medical School. My research focuses on using AI/ML to support clinical decision-making by improving the interpretability and fairness of predictive models deployed in healthcare settings. My work spans multiple clinical domains, with a particular interest in maternal-fetal health.</p>
                 </div>
             </div>
-        <!--
         </section>
-        <section id="research">
-            <h2>Research Interests</h2>
-            <p>My research spans several key areas:</p>
-            <ul style="margin-top: 1rem; margin-left: 2rem;">
-                <li style="margin: 0.5rem 0;"><strong>Research Area 1:</strong> Brief description of this research focus and its significance.</li>
-                <li style="margin: 0.5rem 0;"><strong>Research Area 2:</strong> Description of another major research interest.</li>
-                <li style="margin: 0.5rem 0;"><strong>Research Area 3:</strong> Additional research focus area.</li>
-            </ul>
-        </section>
-        -->
+
         <section id="publications">
             <h2>Selected Publications</h2>
             <div class="publication">
                 <div class="publication-title">Risk factors of overdose in maternal patients with opioid use disorder: a scoping review</div>
                 <div class="publication-meta">KA Campbell, AL Wilson, M Torres, N Dantuluri, K Fryer (2025). The American Journal of Drug and Alcohol Abuse, 51(1), 4-13 DOI: 10.1080/00952990.2024.2407006</div>
             </div>
-            <!--
-            <div class="publication">
-                <div class="publication-title">Another Important Publication Title</div>
-                <div class="publication-meta">Authors. (2023). Journal Name, Volume(Issue), pages. DOI: xxxx</div>
-            </div>
-
-            <div class="publication">
-                <div class="publication-title">Third Publication Example</div>
-                <div class="publication-meta">Authors. (2023). Conference Proceedings, pages. DOI: xxxx</div>
-            </div>
-            -->
-            <p style="margin-top: 1.5rem;"><a href="#" style="color: #3b82f6; text-decoration: none;</a></p>
         </section>
 
         <section id="projects">
-            <h2>Reasearch Areas</h2>
+            <h2>Research Areas</h2>
             
             <div class="project-card">
                 <h3>AI-EFM: Deep Learning to Predict Intrapartum Fetal Distress</h3>
@@ -283,19 +274,9 @@
                 <h3>Hyperoxia-Induced Pathophysiology in Murine Models</h3>
             </div>
 
-         <div class="project-card">
-            <h3>Continuous and Data-Driven Care (CADENCE) for Maternal Opioid Use Disorder</h3>
-            <!-- 
-             <p><strong>Collaborators:</strong> [Names and Institutions]</p>
-             <p style="margin-top: 0.5rem;">Collaborative project description and current status.</p> 
-            -->
+            <div class="project-card">
+                <h3>Continuous and Data-Driven Care (CADENCE) for Maternal Opioid Use Disorder</h3>
             </div>
-        </section>
-
-        <section id="cv">
-            <h2>Curriculum Vitae</h2>
-            <p>TBD</p>
-            <a href="#" class="cv-download">📄 Download CV (PDF)</a>
         </section>
 
         <section id="contact">
@@ -305,27 +286,14 @@
                     <strong>Email</strong>
                     neha_dantuluri@hms.harvard.edu
                 </div>
-               <!-- 
-                <div class="contact-item">
-                   # <strong>Office</strong>
-                   # Building Name, Room 123<br>
-                   # University Name<br>
-                   # City, State ZIP 
-                </div>
-                <div class="contact-item">
-                    <strong>Office Hours</strong>
-                    Tuesdays: 2:00 PM - 4:00 PM<br>
-                    Thursdays: 10:00 AM - 12:00 PM<br>
-                    (or by appointment)
-                </div>
-               -->
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Neha V. Dantuluri. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Last updated: October 2025</p>
+        <p>&copy; 2025 Neha Dantuluri. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;"></p>
     </footer>
 </body>
+</html>
 </html>
