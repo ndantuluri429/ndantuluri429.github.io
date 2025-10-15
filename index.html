@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Neha V. Dantuluri</title>
+    <title>Neha Dantuluri - Academic Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -68,11 +68,6 @@
             color: white;
         }
 
-        nav a.active {
-            background: #e0e7ff;
-            color: #1e3a8a;
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -93,6 +88,94 @@
             font-size: 1.3rem;
             border-bottom: 3px solid #3b82f6;
             padding-bottom: 0.5rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .about-content h1 {
+            color: #1e3a8a;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-content .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #3b82f6;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateX(5px);
+        }
+
+        .project-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .cv-download {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin: 1rem 0;
+        }
+
+        .cv-download:hover {
+            background: #1e3a8a;
+        }
+
+        .publication {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 4px;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 0.3rem;
+        }
+
+        .publication-meta {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
         }
 
         .contact-info {
@@ -123,6 +206,10 @@
         }
 
         @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
             header h1 {
                 font-size: 2rem;
             }
@@ -140,16 +227,67 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">About</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="research.html">Research Areas</a></li>
-            <li><a href="cv.html">CV</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#projects">Research Areas</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <section>
+        <section id="about">
+            <div class="about-grid">
+                <div class="profile-section">
+                    <img src="about-me-image1.jpg" alt="Neha Dantuluri" class="profile-img">
+                </div>
+                <div class="about-content">
+                    <h1>Neha Dantuluri</h1>
+                    <p class="subtitle">Master's Student, Harvard University</p>
+                    <p>Hi! I am a 2nd year MMSc Biomedical Informatics candidate at Harvard Medical School. My research focuses on using AI/ML to support clinical decision-making by improving the interpretability and fairness of predictive models deployed in healthcare settings. My work spans multiple clinical domains, with a particular interest in maternal-fetal health.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <div class="publication">
+                <div class="publication-title">Risk factors of overdose in maternal patients with opioid use disorder: a scoping review</div>
+                <div class="publication-meta">KA Campbell, AL Wilson, M Torres, N Dantuluri, K Fryer (2025). The American Journal of Drug and Alcohol Abuse, 51(1), 4-13 DOI: 10.1080/00952990.2024.2407006</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Research Areas</h2>
+
+            <div class="project-card">
+                <h3>Development and Validation of Stillbirth Risk Prediction using Machine Learning</h3>
+            </div>
+            
+            <div class="project-card">
+                <h3>AI-EFM: Deep Learning to Predict Intrapartum Fetal Distress</h3>
+            </div>
+
+            <div class="project-card">
+                <h3>Effective Use of Mobile Health Map Data to Visualize and Inform Data-Driven Population Health Management</h3>
+            </div>
+
+            <div class="project-card">
+                <h3>Hyperoxia-Induced Pathophysiology in Murine Models</h3>
+            </div>
+
+            <div class="project-card">
+                <h3>Continuous and Data-Driven Care (CADENCE) for Maternal Opioid Use Disorder</h3>
+            </div>
+        </section>
+
+        <section id="cv">
+            <h2>Curriculum Vitae</h2>
+            <p>TBD</p>
+            <a href="#" class="cv-download">📄 Download CV (PDF)</a>
+        </section>
+
+        <section id="contact">
             <h2>Contact Information</h2>
             <div class="contact-info">
                 <div class="contact-item">
@@ -162,6 +300,7 @@
 
     <footer>
         <p>&copy; 2025 Neha Dantuluri. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;"></p>
     </footer>
 </body>
 </html>
