@@ -15,21 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f5f5f5;
-        }
-
-        header {
-            background: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1e3a8a;
+            background: #f8f9fa;
         }
 
         nav {
@@ -64,7 +50,7 @@
         }
 
         nav a:hover {
-            background: #3b82f6;
+            background: #667eea;
             color: white;
         }
 
@@ -74,20 +60,13 @@
             padding: 2rem;
         }
 
-        section {
+        /* About Section */
+        .about-section {
             background: white;
             margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        section h2 {
-            color: #1e3a8a;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            border-bottom: 3px solid #3b82f6;
-            padding-bottom: 0.5rem;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .about-grid {
@@ -109,73 +88,178 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .about-content h1 {
-            color: #1e3a8a;
-            font-size: 1.8rem;
+            color: #2d3748;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
         }
 
         .about-content .subtitle {
-            color: #666;
+            color: #718096;
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             font-style: italic;
         }
 
-        .project-card {
-            background: #f8fafc;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-left: 4px solid #3b82f6;
-            border-radius: 4px;
-            transition: transform 0.3s;
+        /* Research Panels Section */
+        .research-intro {
+            text-align: center;
+            margin: 3rem 0 2rem 0;
         }
 
-        .project-card:hover {
-            transform: translateX(5px);
+        .research-intro h2 {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
         }
 
-        .project-card h3 {
-            color: #1e3a8a;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
+        .research-intro p {
+            font-size: 1.1rem;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        .cv-download {
-            display: inline-block;
-            background: #3b82f6;
+        .panels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .panel:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .panel-icon {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: #6b46c1;
             color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background 0.3s;
-            margin: 1rem 0;
+            text-align: center;
+            padding: 2rem;
         }
 
-        .cv-download:hover {
-            background: #1e3a8a;
+        .panel:nth-child(2) .panel-icon {
+            background: #d53f8c;
+        }
+
+        .panel:nth-child(3) .panel-icon {
+            background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+        }
+
+        .panel:nth-child(4) .panel-icon {
+            background: linear-gradient(135deg, #2f855a 0%, #276749 100%);
+        }
+
+        .panel-content {
+            padding: 1.5rem;
+        }
+
+        .panel-content p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .panel-badge {
+            display: inline-block;
+            background: #e6f2ff;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .explore-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s;
+        }
+
+        .explore-btn:hover {
+            gap: 0.8rem;
+        }
+
+        /* Regular Sections */
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
         }
 
         .publication {
             margin: 1.5rem 0;
             padding: 1rem;
             background: #f8fafc;
-            border-radius: 4px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
         }
 
         .publication-title {
             font-weight: 600;
-            color: #1e3a8a;
+            color: #2d3748;
             margin-bottom: 0.3rem;
         }
 
         .publication-meta {
             font-style: italic;
-            color: #666;
+            color: #718096;
             font-size: 0.9rem;
+        }
+
+        .cv-download {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 1rem 0;
+        }
+
+        .cv-download:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
         }
 
         .contact-info {
@@ -188,17 +272,17 @@
         .contact-item {
             padding: 1rem;
             background: #f8fafc;
-            border-radius: 4px;
+            border-radius: 8px;
         }
 
         .contact-item strong {
-            color: #1e3a8a;
+            color: #2d3748;
             display: block;
             margin-bottom: 0.5rem;
         }
 
         footer {
-            background: #1e293b;
+            background: #2d3748;
             color: white;
             text-align: center;
             padding: 2rem;
@@ -208,10 +292,11 @@
         @media (max-width: 768px) {
             .about-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            header h1 {
-                font-size: 2rem;
+            .panels-grid {
+                grid-template-columns: 1fr;
             }
 
             nav ul {
@@ -221,6 +306,10 @@
             nav a {
                 border-bottom: 1px solid #eee;
             }
+
+            .about-content h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -228,15 +317,16 @@
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
             <li><a href="#publications">Publications</a></li>
-            <li><a href="#projects">Research Areas</a></li>
             <li><a href="#cv">CV</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <section id="about">
+        <!-- About Section -->
+        <section id="about" class="about-section">
             <div class="about-grid">
                 <div class="profile-section">
                     <img src="about-me-image1.jpg" alt="Neha Dantuluri" class="profile-img">
@@ -249,6 +339,63 @@
             </div>
         </section>
 
+        <!-- Research Focus Areas -->
+        <div id="research" class="research-intro">
+            <h2>My Research Focus Areas</h2>
+            <p>Explore my work at the intersection of AI, clinical care, and healthcare informatics. Click on any area to learn more about the projects and publications.</p>
+        </div>
+
+        <div class="panels-grid">
+            <div class="panel" onclick="alert('Feature coming soon: Full page with all Maternal-Fetal Health AI projects!')">
+                <div class="panel-icon">AI for Maternal-Fetal Health</div>
+                <div class="panel-content">
+                    <p>Developing machine learning models to predict and prevent adverse pregnancy outcomes, including stillbirth risk prediction and intrapartum fetal distress monitoring.</p>
+                    <div>
+                        <span class="panel-badge">3 Projects</span>
+                        <span class="panel-badge">1 Publication</span>
+                    </div>
+                    <a href="#" class="explore-btn" onclick="event.stopPropagation();">Explore Research →</a>
+                </div>
+            </div>
+
+            <div class="panel" onclick="alert('Feature coming soon: Full page with all Trauma-Informed Care projects!')">
+                <div class="panel-icon">Trauma-Informed Clinical Care</div>
+                <div class="panel-content">
+                    <p>Supporting vulnerable populations through evidence-based interventions, focusing on maternal opioid use disorder and continuous data-driven care approaches.</p>
+                    <div>
+                        <span class="panel-badge">2 Projects</span>
+                        <span class="panel-badge">1 Publication</span>
+                    </div>
+                    <a href="#" class="explore-btn" onclick="event.stopPropagation();">Explore Research →</a>
+                </div>
+            </div>
+
+            <div class="panel" onclick="alert('Feature coming soon: Full page with all Public Health Informatics projects!')">
+                <div class="panel-icon">Public Health Informatics</div>
+                <div class="panel-content">
+                    <p>Leveraging mobile health data and population-level analytics to visualize trends and inform data-driven healthcare management and policy decisions.</p>
+                    <div>
+                        <span class="panel-badge">1 Project</span>
+                        <span class="panel-badge">In Progress</span>
+                    </div>
+                    <a href="#" class="explore-btn" onclick="event.stopPropagation();">Explore Research →</a>
+                </div>
+            </div>
+
+            <div class="panel" onclick="alert('Feature coming soon: Full page with all Biomedical Lab Research projects!')">
+                <div class="panel-icon">Biomedical Laboratory Research</div>
+                <div class="panel-content">
+                    <p>Investigating molecular mechanisms and pathophysiology through bench research, including studies on hyperoxia-induced effects in murine models.</p>
+                    <div>
+                        <span class="panel-badge">1 Project</span>
+                        <span class="panel-badge">Completed</span>
+                    </div>
+                    <a href="#" class="explore-btn" onclick="event.stopPropagation();">Explore Research →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Publications Section -->
         <section id="publications">
             <h2>Selected Publications</h2>
             <div class="publication">
@@ -257,36 +404,14 @@
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Research Areas</h2>
-
-            <div class="project-card">
-                <h3>Development and Validation of Stillbirth Risk Prediction using Machine Learning</h3>
-            </div>
-            
-            <div class="project-card">
-                <h3>AI-EFM: Deep Learning to Predict Intrapartum Fetal Distress</h3>
-            </div>
-
-            <div class="project-card">
-                <h3>Effective Use of Mobile Health Map Data to Visualize and Inform Data-Driven Population Health Management</h3>
-            </div>
-
-            <div class="project-card">
-                <h3>Hyperoxia-Induced Pathophysiology in Murine Models</h3>
-            </div>
-
-            <div class="project-card">
-                <h3>Continuous and Data-Driven Care (CADENCE) for Maternal Opioid Use Disorder</h3>
-            </div>
-        </section>
-
+        <!-- CV Section -->
         <section id="cv">
             <h2>Curriculum Vitae</h2>
-            <p>TBD</p>
+            <p>Download my complete CV for detailed information about my education, research experience, publications, and activities.</p>
             <a href="#" class="cv-download">📄 Download CV (PDF)</a>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Information</h2>
             <div class="contact-info">
@@ -300,7 +425,6 @@
 
     <footer>
         <p>&copy; 2025 Neha Dantuluri. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;"></p>
     </footer>
 </body>
 </html>
