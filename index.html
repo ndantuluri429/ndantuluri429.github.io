@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neha Dantuluri - Academic Portfolio</title>
+    <title>Neha V. Dantuluri - Academic Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,21 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f8f9fa;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e3a8a;
         }
 
         nav {
@@ -50,8 +64,13 @@
         }
 
         nav a:hover {
-            background: #667eea;
+            background: #3b82f6;
             color: white;
+        }
+
+        nav a.active {
+            background: #e0e7ff;
+            color: #1e3a8a;
         }
 
         .container {
@@ -60,13 +79,20 @@
             padding: 2rem;
         }
 
-        /* About Section */
-        .about-section {
+        section {
             background: white;
             margin: 2rem 0;
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 0.5rem;
         }
 
         .about-grid {
@@ -85,212 +111,26 @@
         .profile-img {
             width: 250px;
             height: 250px;
-            border-radius: 12px;
+            border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .about-content h1 {
-            color: #2d3748;
-            font-size: 2rem;
+            color: #1e3a8a;
+            font-size: 1.8rem;
             margin-bottom: 0.5rem;
         }
 
         .about-content .subtitle {
-            color: #718096;
+            color: #666;
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             font-style: italic;
-        }
-
-        /* Research Panels Section */
-        .research-intro {
-            text-align: center;
-            margin: 3rem 0 2rem 0;
-        }
-
-        .research-intro h2 {
-            font-size: 2rem;
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
-
-        .research-intro p {
-            font-size: 1.1rem;
-            color: #718096;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .panels-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .panel {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .panel:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-        }
-
-        .panel-icon {
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: #6b46c1;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .panel:nth-child(2) .panel-icon {
-            background: #d53f8c;
-        }
-
-        .panel:nth-child(3) .panel-icon {
-            background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
-        }
-
-        .panel:nth-child(4) .panel-icon {
-            background: linear-gradient(135deg, #2f855a 0%, #276749 100%);
-        }
-
-        .panel:nth-child(5) .panel-icon {
-            background: #6b46c1;
-        }
-
-        .panel:nth-child(6) .panel-icon {
-            background: #d53f8c;
-        }
-
-        .panel-content {
-            padding: 1.5rem;
-        }
-
-        .panel-content p {
-            color: #4a5568;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .panel-badge {
-            display: inline-block;
-            background: #e6f2ff;
-            color: #667eea;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-right: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .explore-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            color: #667eea;
-            font-weight: 600;
-            text-decoration: none;
-            transition: gap 0.3s;
-        }
-
-        .explore-btn:hover {
-            gap: 0.8rem;
-        }
-
-        /* Regular Sections */
-        section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        section h2 {
-            color: #2d3748;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 0.5rem;
-        }
-
-        .publication {
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: #f8fafc;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-
-        .publication-title {
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 0.3rem;
-        }
-
-        .publication-meta {
-            font-style: italic;
-            color: #718096;
-            font-size: 0.9rem;
-        }
-
-        .cv-download {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-            margin: 1rem 0;
-        }
-
-        .cv-download:hover {
-            background: #5a67d8;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .contact-item {
-            padding: 1rem;
-            background: #f8fafc;
-            border-radius: 8px;
-        }
-
-        .contact-item strong {
-            color: #2d3748;
-            display: block;
-            margin-bottom: 0.5rem;
         }
 
         footer {
-            background: #2d3748;
+            background: #1e293b;
             color: white;
             text-align: center;
             padding: 2rem;
@@ -300,11 +140,10 @@
         @media (max-width: 768px) {
             .about-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
             }
 
-            .panels-grid {
-                grid-template-columns: 1fr;
+            header h1 {
+                font-size: 2rem;
             }
 
             nav ul {
@@ -314,27 +153,22 @@
             nav a {
                 border-bottom: 1px solid #eee;
             }
-
-            .about-content h1 {
-                font-size: 1.5rem;
-            }
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#cv">CV</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html" class="active">About</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="research.html">Research Areas</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <!-- About Section -->
-        <section id="about" class="about-section">
+        <section id="about">
             <div class="about-grid">
                 <div class="profile-section">
                     <img src="about-me-image1.jpg" alt="Neha Dantuluri" class="profile-img">
@@ -343,109 +177,6 @@
                     <h1>Neha Dantuluri</h1>
                     <p class="subtitle">Master's Student, Harvard University</p>
                     <p>Hi! I am a 2nd year MMSc Biomedical Informatics candidate at Harvard Medical School. My research focuses on using AI/ML to support clinical decision-making by improving the interpretability and fairness of predictive models deployed in healthcare settings. My work spans multiple clinical domains, with a particular interest in maternal-fetal health.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Active Research Projects -->
-        <div id="research" class="research-intro">
-            <h2>Active Research Projects</h2>
-            <p>Click on any area to learn more about the projects and publications!</p>
-        </div>
-
-        <div class="panels-grid">
-            <div class="panel" onclick="alert('Feature coming soon: Full page with all projects!')">
-                <div class="panel-icon">AI for Electronic Fetal Monitoring</div>
-                <div class="panel-content">
-                    <p>Building deep learning algorithms to analyze continuous fetal heart rate data and predict fetal acidemia with greater clinical reliability.</p>
-                    <div>
-                        <span class="panel-badge">1 Project</span>
-                        <span class="panel-badge">In Progress</span>
-                    </div>
-                    <a href="#" class="explore-btn" onclick="event.stopPropagation();">Explore Research →</a>
-                </div>
-            </div>
-
-            <div class="panel" onclick="alert('Feature coming soon: Full page with all projects!')">
-                <div class="panel-icon">Machine Learning for Stillbirth Risk Prediction</div>
-                <div class="panel-content">
-                    <p>Developing interpretable machine learning models to improve stillbirth risk assessment and prevention.</p>
-                    <div>
-                        <span class="panel-badge">1 Project</span>
-                        <span class="panel-badge">In Progress</span>
-                    </div>
-                    <a href="#" class="explore-btn" onclick="event.stopPropagation();">Explore Research →</a>
-                </div>
-            </div>
-
-            <div class="panel" onclick="alert('Feature coming soon: Full page with all projects!')">
-                <div class="panel-icon">Mobile Health Van Dashboard</div>
-                <div class="panel-content">
-                    <p>Development of an R Shiny dashboard visualizing chronic disease and mobile health van prevalence to inform better population health management.</p>
-                    <div>
-                        <span class="panel-badge">1 Project</span>
-                        <span class="panel-badge">In Progress</span>
-                    </div>
-                    <a href="#" class="explore-btn" onclick="event.stopPropagation();">Explore Research →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Past Research Projects -->
-        <div class="research-intro">
-            <h2>Past Research Projects</h2>
-            <p>Click on any area to learn more about the projects and publications!</p>
-        </div>
-
-        <div class="panels-grid">
-            <div class="panel" onclick="alert('Feature coming soon: Full page with all projects!')">
-                <div class="panel-icon">Cardiac Effects of Hyperoxia Exposure</div>
-                <div class="panel-content">
-                    <p>A time-course study examining how age and sex affect cardiac function and electrical activity under hyperoxia conditions.</p>
-                    <div>
-                        <span class="panel-badge">1 Project</span>
-                        <span class="panel-badge">Completed</span>
-                    </div>
-                    <a href="#" class="explore-btn" onclick="event.stopPropagation();">Explore Research →</a>
-                </div>
-            </div>
-
-            <div class="panel" onclick="alert('Feature coming soon: Full page with all projects!')">
-                <div class="panel-icon">Gender-Based Violence and Health Systems Response</div>
-                <div class="panel-content">
-                    <p>Exploring the intersection of trauma-informed healthcare and community-based interventions to support survivors of gender-based violence.</p>
-                    <div>
-                        <span class="panel-badge">1 Project</span>
-                        <span class="panel-badge">1 Publication</span>
-                    </div>
-                    <a href="#" class="explore-btn" onclick="event.stopPropagation();">Explore Research →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Publications Section -->
-        <section id="publications">
-            <h2>Selected Publications</h2>
-            <div class="publication">
-                <div class="publication-title">Risk factors of overdose in maternal patients with opioid use disorder: a scoping review</div>
-                <div class="publication-meta">KA Campbell, AL Wilson, M Torres, N Dantuluri, K Fryer (2025). The American Journal of Drug and Alcohol Abuse, 51(1), 4-13 DOI: 10.1080/00952990.2024.2407006</div>
-            </div>
-        </section>
-
-        <!-- CV Section -->
-        <section id="cv">
-            <h2>Curriculum Vitae</h2>
-            <p>Download my complete CV for detailed information about my education, research experience, publications, and activities.</p>
-            <a href="#" class="cv-download">📄 Download CV (PDF)</a>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Information</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <strong>Email</strong>
-                    neha_dantuluri [at] hms [dot] harvard [dot] edu
                 </div>
             </div>
         </section>
