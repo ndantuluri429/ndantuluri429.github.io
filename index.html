@@ -10,356 +10,314 @@
     body {
       font-family: Helvetica, Arial, sans-serif;
       font-size: 16px;
-      line-height: 1.6;
-      color: #000;
+      line-height: 1.65;
+      color: #111;
       background: #fff;
-      max-width: 760px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 60px 24px 80px;
+      padding: 36px 40px 100px;
     }
 
-    /* ── Header ── */
-    header {
-      margin-bottom: 48px;
-    }
+    a { color: #1a0dab; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    header h1 {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 0.01em;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      font-size: 14px;
-    }
-
-    header a {
-      color: #000;
-      text-decoration: underline;
-    }
-
-    /* ── Nav ── */
+    /* ── Top nav ── */
     nav {
       display: flex;
-      gap: 24px;
-      margin-bottom: 56px;
-      border-bottom: 1px solid #000;
-      padding-bottom: 12px;
+      justify-content: flex-end;
+      gap: 28px;
+      margin-bottom: 64px;
     }
 
     nav a {
-      font-size: 14px;
-      color: #000;
+      font-size: 15px;
+      color: #111;
       text-decoration: none;
-      font-weight: bold;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
     }
 
     nav a:hover { text-decoration: underline; }
 
-    /* ── Sections ── */
-    section {
-      margin-bottom: 56px;
+    nav a.active { color: #1a0dab; }
+
+    /* ── Name block ── */
+    .name-block {
+      margin-bottom: 6px;
     }
 
-    section h2 {
-      font-size: 13px;
+    .name-block h1 {
+      font-size: 34px;
       font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border-bottom: 1px solid #000;
-      padding-bottom: 6px;
-      margin-bottom: 24px;
-    }
-
-    /* ── Bio ── */
-    #about p {
-      font-size: 15px;
-      max-width: 680px;
-    }
-
-    /* ── Entry rows ── */
-    .entry {
-      display: flex;
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    .entry-meta {
-      flex: 0 0 160px;
-      font-size: 13px;
-      color: #000;
-      padding-top: 2px;
-    }
-
-    .entry-meta .place {
-      font-weight: bold;
-    }
-
-    .entry-meta .date {
-      display: block;
-      margin-top: 2px;
-    }
-
-    .entry-body {
-      flex: 1;
-    }
-
-    .entry-body .title {
-      font-weight: bold;
-      font-size: 15px;
-    }
-
-    .entry-body .subtitle {
-      font-size: 14px;
-      margin-top: 2px;
-    }
-
-    .entry-body ul {
-      margin-top: 8px;
-      padding-left: 18px;
-      font-size: 14px;
-    }
-
-    .entry-body ul li {
+      letter-spacing: -0.01em;
       margin-bottom: 4px;
     }
 
-    /* ── Publications ── */
-    .pub {
-      margin-bottom: 16px;
-      font-size: 14px;
-      padding-left: 18px;
-      position: relative;
+    .name-block .role {
+      font-size: 16px;
+      color: #111;
     }
 
-    .pub::before {
-      content: "—";
-      position: absolute;
-      left: 0;
+    /* ── About: text + photo side-by-side ── */
+    .about-wrap {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+      margin-top: 28px;
+      margin-bottom: 60px;
+    }
+
+    .about-text {
+      flex: 1;
+      font-size: 15px;
+    }
+
+    .about-text p {
+      margin-bottom: 14px;
+    }
+
+    .about-photo {
+      flex: 0 0 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .about-photo img {
+      width: 180px;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Photo placeholder shown when no real photo is set */
+    .photo-placeholder {
+      width: 180px;
+      height: 210px;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .about-photo .contact {
+      font-size: 13px;
+      font-family: "Courier New", Courier, monospace;
+      color: #111;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── Section headers ── */
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h2 {
+      font-size: 26px;
+      font-weight: normal;
+      margin-bottom: 24px;
+    }
+
+    /* ── Date-row entries (research, news, awards) ── */
+    .row {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .row-date {
+      flex: 0 0 120px;
+      font-weight: bold;
+      padding-top: 1px;
+      color: #111;
+    }
+
+    .row-content { flex: 1; }
+
+    .row-content .entry-title {
+      font-weight: bold;
+    }
+
+    .row-content .entry-sub {
+      color: #111;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    .row-content p { margin-bottom: 6px; }
+
+    /* ── Publications ── */
+    .pub {
+      margin-bottom: 18px;
+      font-size: 15px;
     }
 
     .pub em { font-style: italic; }
 
-    /* ── Skills grid ── */
+    /* ── Skills table ── */
     .skills-table {
-      font-size: 14px;
+      font-size: 15px;
       width: 100%;
       border-collapse: collapse;
     }
 
-    .skills-table td {
+    .skills-table tr td {
       vertical-align: top;
-      padding: 6px 0;
-      border-bottom: 1px solid #e0e0e0;
+      padding: 7px 0;
+      border-bottom: 1px solid #e8e8e8;
     }
 
     .skills-table td:first-child {
       font-weight: bold;
       width: 200px;
-      padding-right: 16px;
-    }
-
-    /* ── Awards ── */
-    .award-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      padding: 6px 0;
-      border-bottom: 1px solid #e0e0e0;
+      padding-right: 20px;
     }
 
     /* ── Responsive ── */
-    @media (max-width: 560px) {
-      .entry { flex-direction: column; gap: 4px; }
-      .entry-meta { flex: none; }
-      nav { flex-wrap: wrap; gap: 14px; }
+    @media (max-width: 580px) {
+      body { padding: 24px 18px 60px; }
+      .about-wrap { flex-direction: column-reverse; gap: 24px; }
+      .about-photo { flex: none; align-items: flex-start; }
+      nav { gap: 16px; }
+      .row { flex-direction: column; gap: 2px; }
+      .row-date { flex: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Neha Dantuluri</h1>
-    <p>
-      <a href="mailto:neha_dantuluri@hms.harvard.edu">neha_dantuluri@hms.harvard.edu</a>
-      &nbsp;·&nbsp;
-      <a href="https://linkedin.com/in/nehadantuluri/" target="_blank">LinkedIn</a>
-      &nbsp;·&nbsp;
-      <a href="https://github.com/ndantuluri429" target="_blank">GitHub</a>
-    </p>
-  </header>
-
   <!-- Nav -->
   <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#research">Research</a>
-    <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#skills">Skills</a>
-    <a href="#clinical">Clinical</a>
-    <a href="#awards">Awards</a>
+    <a href="#about" class="active">about</a>
+    <a href="#research">research</a>
+    <a href="#publications">publications</a>
+    <a href="#skills">skills</a>
+    <a href="#clinical">clinical</a>
   </nav>
 
-  <!-- About -->
-  <section id="about">
-    <h2>About</h2>
-    <p>Biomedical informatics researcher with expertise in biostatistics, AI, and computational methods. I leverage quantitative approaches, patient cohorts, exposomic measures, and epidemiology to generate clinically meaningful insights that improve health outcomes. My work spans EHR-based observational research, survival and longitudinal analysis, and developing data-driven methods to advance clinical care.</p>
-  </section>
+  <!-- Name -->
+  <div class="name-block">
+    <h1>Neha Dantuluri</h1>
+    <div class="role">MMSc Student in Biomedical Informatics @ Harvard Medical School</div>
+  </div>
 
-  <!-- Education -->
-  <section id="education">
-    <h2>Education</h2>
-
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">Harvard Medical School</span>
-        <span class="date">2024 – 2026</span>
-        <span class="date">Boston, MA</span>
-      </div>
-      <div class="entry-body">
-        <div class="title">MMSc Biomedical Informatics</div>
-        <div class="subtitle">Coursework: Advanced Coding &amp; Statistics for Biomedical Informatics, Biomedical Dashboards w/ R Shiny, Health Innovation Technology, Foundations of AI in Medicine, Health Law and Access to Medicines (Harvard Law), Clinical Data Learning Visualization and Deployments (MIT)</div>
-      </div>
+  <!-- About + Photo -->
+  <div class="about-wrap" id="about">
+    <div class="about-text">
+      <p>
+        I am a biomedical informatics researcher working at the intersection of machine learning, biostatistics,
+        and clinical medicine. My research focuses on building rigorous, interpretable predictive models from
+        electronic health record data to improve patient outcomes.
+      </p>
+      <p>
+        My graduate thesis, advised by
+        <a href="#">Vesela Kovacheva, MD, PhD</a> and <a href="#">Arjun Manrai, PhD</a>,
+        develops and validates longitudinal ML risk prediction models for stillbirth across ~170,000 pregnancies
+        at Mass General Brigham. I also work in the
+        <a href="#">CAVA Lab</a> at Boston Children's Hospital, evaluating LLM and deep learning performance
+        for fetal acidemia classification using intrapartum electronic fetal monitoring.
+      </p>
+      <p>
+        Previously, I was an undergraduate summer fellow in the
+        <a href="#">Manrai-Patel Lab</a> at HMS, where I built an interactive R Shiny dashboard
+        integrating national health datasets to model chronic disease measures at the census-tract level.
+        I also conducted geospatial and clinical NLP research in the
+        <a href="#">Marshall Public Health Lab</a> at the University of South Florida.
+      </p>
+      <p>
+        I hold a B.S. in Information Science (Health Informatics) and a B.S. in Biomedical Science
+        from the University of South Florida. I am supported by the INDECS Full-Tuition Scholarship
+        at Harvard Medical School.
+      </p>
     </div>
 
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">University of South Florida</span>
-        <span class="date">2020 – 2024</span>
-        <span class="date">Tampa, FL</span>
-      </div>
-      <div class="entry-body">
-        <div class="title">B.S. Information Science (Health Informatics) &amp; B.S. Biomedical Science</div>
-        <div class="subtitle">Coursework: Statistics, Python, C++, Java, Organic Chemistry, Genetics, Clinical Chemistry, Drug Discovery, Relational Database Concepts, EHR Fundamentals, IT Networking</div>
+    <div class="about-photo">
+     <img src="neha-photo-1.jpg" alt="Neha Dantuluri">
+      <!-- <div class="photo-placeholder">add photo here</div> -->
+      <div class="contact">
+        neha_dantuluri<br>[at] hms [dot]<br>harvard [dot] edu
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- Research -->
   <section id="research">
-    <h2>Research Experience</h2>
+    <h2>research</h2>
 
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">Mass General Brigham</span>
-        <span class="date">Aug 2025 – Present</span>
-      </div>
-      <div class="entry-body">
-        <div class="title">AI/ML for Stillbirth Risk Prediction — Graduate Thesis</div>
-        <div class="subtitle">PI(s): Vesela Kovacheva, MD, PhD &amp; Arjun Manrai, PhD</div>
-        <ul>
-          <li>Developed and validated longitudinal risk prediction models for stillbirth on ~170,000 pregnancies (~0.4% outcome prevalence) using penalized and ensemble methods (logistic regression, Elastic Net, gradient boosting, random forest).</li>
-          <li>Designed leakage-safe analytic workflows with training-only MICE imputation and cross-validation; selected operating thresholds via Youden's index; externally validated on the nuMoM2b cohort.</li>
-          <li>Conducted association analyses using Firth's penalized logistic regression and Poisson regression; applied SHAP for interpretability.</li>
-          <li>Translated physician-identified risk factors into 74 computable clinical and longitudinal variables spanning EHR and administrative/claims data; contributed to manuscript preparation.</li>
-        </ul>
+    <div class="row">
+      <div class="row-date">Aug 2025 –<br>Present</div>
+      <div class="row-content">
+        <div class="entry-title">AI/ML for Stillbirth Risk Prediction — Graduate Thesis</div>
+        <div class="entry-sub">Mass General Brigham &nbsp;·&nbsp; PI(s): Vesela Kovacheva, MD, PhD &amp; Arjun Manrai, PhD</div>
+        <p style="margin-top:8px;">Developed and validated longitudinal risk prediction models for stillbirth on ~170,000 pregnancies using penalized and ensemble methods (logistic regression, Elastic Net, gradient boosting, random forest) with 74 computable clinical and longitudinal variables. Designed leakage-safe workflows with training-only MICE imputation; externally validated on the nuMoM2b cohort. Applied SHAP for interpretability.</p>
       </div>
     </div>
 
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">Boston Children's Hospital</span>
-        <span class="date">Sep 2024 – May 2026</span>
-      </div>
-      <div class="entry-body">
-        <div class="title">CAVA Lab — Graduate Research Assistant</div>
-        <div class="subtitle">PI: William La Cava, PhD</div>
-        <ul>
-          <li>Established statistical baselines for physiological time-series; evaluated LLM and deep learning performance against expert obstetrician consensus for fetal acidemia classification using intrapartum EFM.</li>
-          <li>Quantified model discrimination (AUROC, balanced accuracy) across multiple pH thresholds; benchmarked zero-shot LLMs against CNN, LSTM, and InceptionTime models.</li>
-        </ul>
+    <div class="row">
+      <div class="row-date">Sep 2024 –<br>May 2026</div>
+      <div class="row-content">
+        <div class="entry-title">CAVA Lab — Graduate Research Assistant</div>
+        <div class="entry-sub">Boston Children's Hospital &nbsp;·&nbsp; PI: William La Cava, PhD</div>
+        <p style="margin-top:8px;">Established statistical baselines for physiological time-series; benchmarked zero-shot LLMs against CNN, LSTM, and InceptionTime models for fetal acidemia classification using intrapartum EFM, with umbilical artery pH as ground truth. Quantified model discrimination (AUROC, balanced accuracy) across multiple thresholds.</p>
       </div>
     </div>
 
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">Harvard Medical School</span>
-        <span class="date">Jun 2023 – Jun 2024</span>
-      </div>
-      <div class="entry-body">
-        <div class="title">Manrai-Patel Lab — Undergraduate Summer Fellow</div>
-        <div class="subtitle">PI(s): Arjun Manrai, PhD &amp; Chirag Patel, PhD</div>
-        <ul>
-          <li>Built an interactive R Shiny dashboard integrating CDC PLACES, HRSA, and GIS sources to model ~45 chronic disease measures from national to census-tract level for the Family Van and Mobile Health Map.</li>
-          <li>Ran iterative testing and feedback cycles with public health researchers and clinicians.</li>
-        </ul>
+    <div class="row">
+      <div class="row-date">Jun 2023 –<br>Jun 2024</div>
+      <div class="row-content">
+        <div class="entry-title">Manrai-Patel Lab — Undergraduate Summer Fellow</div>
+        <div class="entry-sub">Harvard Medical School &nbsp;·&nbsp; PI(s): Arjun Manrai, PhD &amp; Chirag Patel, PhD</div>
+        <p style="margin-top:8px;">Built an interactive R Shiny dashboard integrating CDC PLACES, HRSA, and GIS data to model ~45 chronic disease measures from national to census-tract level for the Family Van and Mobile Health Map.</p>
       </div>
     </div>
 
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">University of South Florida</span>
-        <span class="date">Jan 2022 – Apr 2024</span>
-      </div>
-      <div class="entry-body">
-        <div class="title">Marshall Public Health Lab — Undergraduate Research Assistant</div>
-        <div class="subtitle">PI(s): Jennifer Marshall, PhD &amp; Kimberly Fryer, MD</div>
-        <ul>
-          <li>Conducted geospatial analysis and multivariate regression to identify factors associated with maternal opioid use disorder prevalence.</li>
-          <li>Contributed to a clinical NLP pipeline using ICD-10 codes to extract opioid use disorder cases from Tampa General Hospital's EHR.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">Harvard Medical School</span>
-        <span class="date">Jan – May 2025</span>
-      </div>
-      <div class="entry-body">
-        <div class="title">Assessing UCEC Risk via ML-Based Survival Analysis</div>
-        <div class="subtitle">Advisors: Marinka Zitnik, PhD; Gregory Kuling, PhD; Courtney Shearer</div>
-        <ul>
-          <li>Built ML survival models (time-to-event analysis) for uterine corpus endometrial carcinoma, integrating clinical variables, copy number variations, and DNA methylation data.</li>
-          <li>Performed data harmonization, feature engineering, and QC across heterogeneous datasets; coordinated a three-person analytic team.</li>
-        </ul>
+    <div class="row">
+      <div class="row-date">Jan 2022 –<br>Apr 2024</div>
+      <div class="row-content">
+        <div class="entry-title">Marshall Public Health Lab — Undergraduate Research Assistant</div>
+        <div class="entry-sub">University of South Florida &nbsp;·&nbsp; PI(s): Jennifer Marshall, PhD &amp; Kimberly Fryer, MD</div>
+        <p style="margin-top:8px;">Conducted geospatial analysis and multivariate regression on maternal opioid use disorder prevalence. Contributed to a clinical NLP pipeline using ICD-10 codes to extract OUD cases from Tampa General Hospital's EHR.</p>
       </div>
     </div>
 
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">MIT</span>
-        <span class="date">Sep 2024 – Jan 2025</span>
-      </div>
-      <div class="entry-body">
-        <div class="title">ED Patient Goal Concordance</div>
-        <div class="subtitle">Advisors: Leo Anthony Celi, MD &amp; Somnath Bose, MD</div>
-        <ul>
-          <li>Built a pipeline to extract and structure goals-of-care information from unstructured ICU clinical notes in MIMIC-III, converting free-text into analyzable data.</li>
-          <li>Applied few-shot learning, RAG via Azure AI Search Index (text-embedding-ada-002) for scalable analysis.</li>
-        </ul>
+    <h2 style="margin-top:48px;">projects</h2>
+
+    <div class="row">
+      <div class="row-date">Jan –<br>May 2025</div>
+      <div class="row-content">
+        <div class="entry-title">Assessing UCEC Risk via ML-Based Survival Analysis</div>
+        <div class="entry-sub">Harvard Medical School &nbsp;·&nbsp; Advisors: Marinka Zitnik, PhD; Gregory Kuling, PhD; Courtney Shearer</div>
+        <p style="margin-top:8px;">Built ML survival models for uterine corpus endometrial carcinoma integrating clinical variables, copy number variations, and DNA methylation data. Led a three-person analytic team through data harmonization and feature engineering.</p>
       </div>
     </div>
 
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">University of South Florida</span>
-        <span class="date">Jan – Apr 2024</span>
+    <div class="row">
+      <div class="row-date">Sep 2024 –<br>Jan 2025</div>
+      <div class="row-content">
+        <div class="entry-title">ED Patient Goal Concordance</div>
+        <div class="entry-sub">MIT &nbsp;·&nbsp; Advisors: Leo Anthony Celi, MD &amp; Somnath Bose, MD</div>
+        <p style="margin-top:8px;">Built a pipeline to extract and structure goals-of-care information from unstructured ICU clinical notes in MIMIC-III using few-shot learning and RAG (Azure AI Search, text-embedding-ada-002).</p>
       </div>
-      <div class="entry-body">
-        <div class="title">College Students and Technology: Transforming Healthcare</div>
-        <div class="subtitle">Advisor: Donna Lee Ettel-Gambino, PhD</div>
-        <ul>
-          <li>Designed and ran a one-way MANOVA in SAS testing gender differences across five healthcare-access preferences among ~300 college students (Wilk's Λ = 0.95, p &lt; 0.05).</li>
-          <li>Identified campus facilities as the leading first-choice provider (59%); female students significantly more likely to use them (62% vs. 48%).</li>
-        </ul>
+    </div>
+
+    <div class="row">
+      <div class="row-date">Jan –<br>Apr 2024</div>
+      <div class="row-content">
+        <div class="entry-title">College Students and Technology: Transforming Healthcare</div>
+        <div class="entry-sub">University of South Florida &nbsp;·&nbsp; Advisor: Donna Lee Ettel-Gambino, PhD</div>
+        <p style="margin-top:8px;">Designed and ran a one-way MANOVA in SAS on gender differences across five healthcare-access preferences among ~300 college students (Wilk's Λ = 0.95, p &lt; 0.05).</p>
       </div>
     </div>
   </section>
 
   <!-- Publications -->
   <section id="publications">
-    <h2>Publications</h2>
+    <h2>publications</h2>
 
     <div class="pub">
       <strong>Dantuluri, N.</strong>, Kleinlein, R., Manrai, AK., Kovacheva, VK. Development and Validation of a Longitudinal and Interpretable Risk Prediction Model for Stillbirth Using Machine Learning. <em>Manuscript in Preparation.</em>
@@ -388,7 +346,7 @@
 
   <!-- Skills -->
   <section id="skills">
-    <h2>Technical Skills</h2>
+    <h2>skills</h2>
     <table class="skills-table">
       <tbody>
         <tr>
@@ -417,55 +375,43 @@
 
   <!-- Clinical -->
   <section id="clinical">
-    <h2>Clinical Experience</h2>
+    <h2>clinical experience</h2>
 
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">Boston Children's Hospital</span>
-        <span class="date">Aug 2024 – Present</span>
-      </div>
-      <div class="entry-body">
-        <div class="title">NICU Patient Care Coordinator</div>
-        <ul>
-          <li>Liaison between clinical staff and care coordination systems in a high-acuity NICU; support patient care workflows across multidisciplinary teams.</li>
-          <li>Work daily within Epic and REDCap to document care, track patient information, and identify workflow gaps.</li>
-        </ul>
+    <div class="row">
+      <div class="row-date">Aug 2024 –<br>Present</div>
+      <div class="row-content">
+        <div class="entry-title">NICU Patient Care Coordinator</div>
+        <div class="entry-sub">Boston Children's Hospital</div>
+        <p style="margin-top:8px;">Liaison between clinical staff and care coordination systems in a high-acuity NICU. Work daily in Epic and REDCap to document care and identify workflow gaps across multidisciplinary teams.</p>
       </div>
     </div>
 
-    <div class="entry">
-      <div class="entry-meta">
-        <span class="place">University of South Florida</span>
-        <span class="date">Aug 2022 – Oct 2023</span>
-      </div>
-      <div class="entry-body">
-        <div class="title">Equal Access Clinic — HIV/AIDS Counselor &amp; Clinical Director</div>
-        <ul>
-          <li>Oversaw public health operations for a student-run clinic serving underserved patients; managed clinical supply chains and trained/supervised 20+ volunteers.</li>
-          <li>Conducted HIV/AIDS testing and sexual health counseling; developed personalized care plans and ensured continuity of care.</li>
-        </ul>
+    <div class="row">
+      <div class="row-date">Aug 2022 –<br>Oct 2023</div>
+      <div class="row-content">
+        <div class="entry-title">Equal Access Clinic — HIV/AIDS Counselor &amp; Clinical Director</div>
+        <div class="entry-sub">University of South Florida</div>
+        <p style="margin-top:8px;">Oversaw public health operations for a student-run clinic serving underserved patients. Managed clinical supply chains, trained and supervised 20+ volunteers, conducted HIV/AIDS testing and sexual health counseling, and maintained patient records in Epic in coordination with the Florida Department of Health.</p>
       </div>
     </div>
-  </section>
 
-  <!-- Awards -->
-  <section id="awards">
-    <h2>Awards</h2>
-    <div class="award-row">
-      <span>INDECS Full-Tuition Scholarship — Harvard Medical School</span>
-      <span>2024</span>
+    <h2 style="margin-top: 48px;">awards</h2>
+
+    <div class="row">
+      <div class="row-date">2024</div>
+      <div class="row-content">INDECS Full-Tuition Scholarship — Harvard Medical School</div>
     </div>
-    <div class="award-row">
-      <span>Dean's Circle of Merit Award — University of South Florida</span>
-      <span>2024</span>
+    <div class="row">
+      <div class="row-date">2024</div>
+      <div class="row-content">Dean's Circle of Merit Award — University of South Florida</div>
     </div>
-    <div class="award-row">
-      <span>Digital Health Venture Semifinalist — TCU Values &amp; Ventures Start-up Competition</span>
-      <span>2022</span>
+    <div class="row">
+      <div class="row-date">2022</div>
+      <div class="row-content">Digital Health Venture Semifinalist — TCU Values &amp; Ventures Start-up Competition</div>
     </div>
-    <div class="award-row">
-      <span>Dean's List — University of South Florida</span>
-      <span>2020–2023</span>
+    <div class="row">
+      <div class="row-date">2020–2023</div>
+      <div class="row-content">Dean's List — University of South Florida</div>
     </div>
   </section>
 
