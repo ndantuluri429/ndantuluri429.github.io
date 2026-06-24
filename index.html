@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neha Dantuluri</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* Force Helvetica everywhere, no exceptions */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, Arial, sans-serif;
+    }
 
     body {
-      font-family: Helvetica, Arial, sans-serif;
       font-size: 16px;
       line-height: 1.65;
       color: #111;
@@ -36,13 +41,10 @@
     }
 
     nav a:hover { text-decoration: underline; }
-
     nav a.active { color: #1a0dab; }
 
     /* ── Name block ── */
-    .name-block {
-      margin-bottom: 6px;
-    }
+    .name-block { margin-bottom: 6px; }
 
     .name-block h1 {
       font-size: 34px;
@@ -51,12 +53,9 @@
       margin-bottom: 4px;
     }
 
-    .name-block .role {
-      font-size: 16px;
-      color: #111;
-    }
+    .name-block .role { font-size: 16px; }
 
-    /* ── About: text + photo side-by-side ── */
+    /* ── About: text + photo ── */
     .about-wrap {
       display: flex;
       gap: 48px;
@@ -65,17 +64,11 @@
       margin-bottom: 60px;
     }
 
-    .about-text {
-      flex: 1;
-      font-size: 15px;
-    }
-
-    .about-text p {
-      margin-bottom: 14px;
-    }
+    .about-text { flex: 1; font-size: 15px; }
+    .about-text p { margin-bottom: 14px; }
 
     .about-photo {
-      flex: 0 0 180px;
+      flex: 0 0 200px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -83,46 +76,135 @@
     }
 
     .about-photo img {
-      width: 180px;
-      height: 210px;
+      width: 200px;
+      height: 240px;
       object-fit: cover;
       display: block;
     }
 
-    /* Photo placeholder shown when no real photo is set */
-    .photo-placeholder {
-      width: 180px;
-      height: 210px;
-      background: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      color: #888;
-      text-align: center;
-      line-height: 1.4;
-    }
-
     .about-photo .contact {
       font-size: 13px;
-      font-family: "Courier New", Courier, monospace;
       color: #111;
       text-align: center;
       line-height: 1.6;
     }
 
     /* ── Section headers ── */
-    section {
-      margin-bottom: 60px;
-    }
+    section { margin-bottom: 60px; }
 
     section h2 {
       font-size: 26px;
       font-weight: normal;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
-    /* ── Date-row entries (projects, awards) ── */
+    /* ── Card grid (research + projects) ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid #111;
+      padding: 20px;
+      cursor: pointer;
+      transition: background 0.15s;
+      display: flex;
+      flex-direction: column;
+      min-height: 160px;
+    }
+
+    .card:hover { background: #f5f5f5; }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .card-inst {
+      font-size: 13px;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .card-date {
+      font-size: 13px;
+      color: #666;
+      margin-top: auto;
+      padding-top: 12px;
+    }
+
+    .card-more {
+      font-size: 13px;
+      color: #1a0dab;
+      margin-top: 10px;
+    }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: #fff;
+      max-width: 600px;
+      width: 90%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 36px 40px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 22px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #111;
+      line-height: 1;
+    }
+
+    .modal-close:hover { color: #555; }
+
+    .modal h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .modal-meta {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .modal-meta span {
+      display: block;
+    }
+
+    .modal-body { font-size: 15px; line-height: 1.7; }
+
+    /* ── Publications ── */
+    .pub { margin-bottom: 18px; font-size: 15px; }
+    .pub em { font-style: italic; }
+
+    /* ── Date rows (used sparingly) ── */
     .row {
       display: flex;
       gap: 32px;
@@ -134,91 +216,22 @@
       flex: 0 0 120px;
       font-weight: bold;
       padding-top: 1px;
-      color: #111;
     }
 
     .row-content { flex: 1; }
-
-    .row-content .entry-title {
-      font-weight: bold;
-    }
-
-    .row-content .entry-sub {
-      color: #111;
-      font-size: 14px;
-      margin-top: 2px;
-    }
-
+    .row-content .entry-title { font-weight: bold; }
+    .row-content .entry-sub { font-size: 14px; margin-top: 2px; color: #444; }
     .row-content p { margin-bottom: 6px; }
-
-    /* ── Research groups ── */
-    .research-group {
-      margin-bottom: 36px;
-      padding-bottom: 36px;
-      border-bottom: 1px solid #e8e8e8;
-    }
-
-    .research-group:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .rg-title {
-      font-size: 17px;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-
-    .rg-meta {
-      font-size: 14px;
-      color: #111;
-      margin-bottom: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px 20px;
-    }
-
-    .rg-meta span { white-space: nowrap; }
-
-    .rg-desc {
-      font-size: 15px;
-    }
-
-    /* ── Publications ── */
-    .pub {
-      margin-bottom: 18px;
-      font-size: 15px;
-    }
-
-    .pub em { font-style: italic; }
-
-    /* ── Skills table ── */
-    .skills-table {
-      font-size: 15px;
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .skills-table tr td {
-      vertical-align: top;
-      padding: 7px 0;
-      border-bottom: 1px solid #e8e8e8;
-    }
-
-    .skills-table td:first-child {
-      font-weight: bold;
-      width: 200px;
-      padding-right: 20px;
-    }
 
     /* ── Responsive ── */
     @media (max-width: 580px) {
       body { padding: 24px 18px 60px; }
       .about-wrap { flex-direction: column-reverse; gap: 24px; }
       .about-photo { flex: none; align-items: flex-start; }
-      nav { gap: 16px; }
+      nav { flex-wrap: wrap; gap: 14px; }
       .row { flex-direction: column; gap: 2px; }
       .row-date { flex: none; }
+      .card-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -273,8 +286,7 @@
     </div>
 
     <div class="about-photo">
-      <!-- Replace the div below with: <img src="your-photo.jpg" alt="Neha Dantuluri"> -->
-      <div class="photo-placeholder">add photo here</div>
+      <img src="neha-photo-1.png" alt="Neha Dantuluri">
       <div class="contact">
         neha_dantuluri<br>[at] hms [dot]<br>harvard [dot] edu
       </div>
@@ -284,86 +296,80 @@
   <!-- Research -->
   <section id="research">
     <h2>research</h2>
+    <div class="card-grid">
 
-    <div class="research-group">
-      <div class="rg-title">ML-Based Stillbirth Risk Prediction</div>
-      <div class="rg-meta">
-        <span>Mass General Brigham &nbsp;·&nbsp; Harvard Medical School</span>
-        <span>PI(s): Vesela Kovacheva, MD, PhD &amp; Arjun Manrai, PhD</span>
-        <span>Aug 2025 – Present</span>
+      <div class="card" onclick="openModal('r1')">
+        <div class="card-title">ML-Based Stillbirth Risk Prediction</div>
+        <div class="card-inst">Mass General Brigham · Harvard Medical School</div>
+        <div class="card-inst">PI(s): V. Kovacheva &amp; A. Manrai</div>
+        <div class="card-date">Aug 2025 – Present</div>
+        <div class="card-more">more →</div>
       </div>
-      <div class="rg-desc">Developed and validated longitudinal risk prediction models for stillbirth on ~170,000 pregnancies using penalized and ensemble methods (logistic regression, Elastic Net, gradient boosting, random forest) with 74 computable clinical and longitudinal variables. Designed leakage-safe workflows with training-only MICE imputation; externally validated on the nuMoM2b cohort. Applied SHAP for interpretability. Graduate thesis research.</div>
-    </div>
 
-    <div class="research-group">
-      <div class="rg-title">AI for Electronic Fetal Monitoring</div>
-      <div class="rg-meta">
-        <span>Boston Children's Hospital &nbsp;·&nbsp; CAVA Lab</span>
-        <span>PI: William La Cava, PhD</span>
-        <span>Sep 2024 – May 2026</span>
+      <div class="card" onclick="openModal('r2')">
+        <div class="card-title">AI for Electronic Fetal Monitoring</div>
+        <div class="card-inst">Boston Children's Hospital · CAVA Lab</div>
+        <div class="card-inst">PI: W. La Cava</div>
+        <div class="card-date">Sep 2024 – May 2026</div>
+        <div class="card-more">more →</div>
       </div>
-      <div class="rg-desc">Established statistical baselines for physiological time-series; benchmarked zero-shot LLMs against CNN, LSTM, and InceptionTime models for fetal acidemia classification using intrapartum electronic fetal monitoring, with umbilical artery pH as ground truth. Quantified model discrimination (AUROC, balanced accuracy) across multiple pH thresholds against expert obstetrician consensus.</div>
-    </div>
 
-    <div class="research-group">
-      <div class="rg-title">Mobile Health Van Data Resource</div>
-      <div class="rg-meta">
-        <span>Harvard Medical School &nbsp;·&nbsp; Manrai-Patel Lab</span>
-        <span>PI(s): Arjun Manrai, PhD &amp; Chirag Patel, PhD</span>
-        <span>Jun 2023 – Jun 2024</span>
+      <div class="card" onclick="openModal('r3')">
+        <div class="card-title">Mobile Health Van Data Resource</div>
+        <div class="card-inst">Harvard Medical School · Manrai-Patel Lab</div>
+        <div class="card-inst">PI(s): A. Manrai &amp; C. Patel</div>
+        <div class="card-date">Jun 2023 – Jun 2024</div>
+        <div class="card-more">more →</div>
       </div>
-      <div class="rg-desc">Translated stakeholder requirements from the Family Van and Mobile Health Map into data specifications; built an interactive R Shiny dashboard integrating CDC PLACES, HRSA, and GIS sources to model ~45 chronic disease measures from national to census-tract level. Ran iterative testing and feedback cycles with public health researchers and clinicians.</div>
-    </div>
 
-    <div class="research-group">
-      <div class="rg-title">Maternal Opioid Use Disorder in Florida</div>
-      <div class="rg-meta">
-        <span>University of South Florida &nbsp;·&nbsp; Marshall Public Health Lab</span>
-        <span>PI(s): Jennifer Marshall, PhD &amp; Kimberly Fryer, MD</span>
-        <span>Jan 2022 – Apr 2024</span>
+      <div class="card" onclick="openModal('r4')">
+        <div class="card-title">Maternal Opioid Use Disorder in Florida</div>
+        <div class="card-inst">University of South Florida · Marshall Public Health Lab</div>
+        <div class="card-inst">PI(s): J. Marshall &amp; K. Fryer</div>
+        <div class="card-date">Jan 2022 – Apr 2024</div>
+        <div class="card-more">more →</div>
       </div>
-      <div class="rg-desc">Conducted geospatial analysis and multivariate regression to identify factors associated with maternal opioid use disorder prevalence; findings informed public health strategy. Contributed to a clinical NLP pipeline using ICD-10 codes and text criteria to extract OUD cases from Tampa General Hospital's EHR, supporting clinical surveillance and quality improvement.</div>
-    </div>
 
-    <div class="research-group">
-      <div class="rg-title">Cardiac Pathophysiology Impact of Hyperoxia in Mice Models</div>
-      <div class="rg-meta">
-        <span>University of South Florida</span>
-        <span>PI: Srinivas K. Panguluri, PhD</span>
+      <div class="card" onclick="openModal('r5')">
+        <div class="card-title">Cardiac Pathophysiology &amp; Hyperoxia in Mice Models</div>
+        <div class="card-inst">University of South Florida</div>
+        <div class="card-inst">PI: S. K. Panguluri</div>
+        <div class="card-date">2023 – 2024</div>
+        <div class="card-more">more →</div>
       </div>
-      <div class="rg-desc">Contributed to a study examining the influence of age and sex on cardiac electrical, functional, and physical alterations in progressive hyperoxia treatment using a murine model, with a time course study design.</div>
+
     </div>
   </section>
 
   <!-- Projects -->
   <section id="projects">
     <h2>projects</h2>
+    <div class="card-grid">
 
-    <div class="row">
-      <div class="row-date">Jan –<br>May 2025</div>
-      <div class="row-content">
-        <div class="entry-title">Assessing UCEC Risk via ML-Based Survival Analysis</div>
-        <div class="entry-sub">Harvard Medical School &nbsp;·&nbsp; Advisors: Marinka Zitnik, PhD; Gregory Kuling, PhD; Courtney Shearer</div>
-        <p style="margin-top:8px;">Built ML survival models for uterine corpus endometrial carcinoma integrating clinical variables, copy number variations, and DNA methylation data. Led a three-person analytic team through data harmonization and feature engineering.</p>
+      <div class="card" onclick="openModal('p1')">
+        <div class="card-title">UCEC Risk via ML-Based Survival Analysis</div>
+        <div class="card-inst">Harvard Medical School</div>
+        <div class="card-inst">Advisors: M. Zitnik, G. Kuling, C. Shearer</div>
+        <div class="card-date">Jan – May 2025</div>
+        <div class="card-more">more →</div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="row-date">Sep 2024 –<br>Jan 2025</div>
-      <div class="row-content">
-        <div class="entry-title">ED Patient Goal Concordance</div>
-        <div class="entry-sub">MIT &nbsp;·&nbsp; Advisors: Leo Anthony Celi, MD &amp; Somnath Bose, MD</div>
-        <p style="margin-top:8px;">Built a pipeline to extract and structure goals-of-care information from unstructured ICU clinical notes in MIMIC-III using few-shot learning and RAG (Azure AI Search, text-embedding-ada-002).</p>
+      <div class="card" onclick="openModal('p2')">
+        <div class="card-title">ED Patient Goal Concordance</div>
+        <div class="card-inst">MIT</div>
+        <div class="card-inst">Advisors: L. A. Celi &amp; S. Bose</div>
+        <div class="card-date">Sep 2024 – Jan 2025</div>
+        <div class="card-more">more →</div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="row-date">Jan –<br>Apr 2024</div>
-      <div class="row-content">
-        <div class="entry-title">College Students and Technology: Transforming Healthcare</div>
-        <div class="entry-sub">University of South Florida &nbsp;·&nbsp; Advisor: Donna Lee Ettel-Gambino, PhD</div>
-        <p style="margin-top:8px;">Designed and ran a one-way MANOVA in SAS on gender differences across five healthcare-access preferences among ~300 college students (Wilk's Λ = 0.95, p &lt; 0.05).</p>
+      <div class="card" onclick="openModal('p3')">
+        <div class="card-title">College Students &amp; Technology: Transforming Healthcare</div>
+        <div class="card-inst">University of South Florida</div>
+        <div class="card-inst">Advisor: D. L. Ettel-Gambino</div>
+        <div class="card-date">Jan – Apr 2024</div>
+        <div class="card-more">more →</div>
       </div>
+
     </div>
   </section>
 
@@ -374,23 +380,18 @@
     <div class="pub">
       <strong>Dantuluri, N.</strong>, Kleinlein, R., Manrai, AK., Kovacheva, VK. Development and Validation of a Longitudinal and Interpretable Risk Prediction Model for Stillbirth Using Machine Learning. <em>Manuscript in Preparation.</em>
     </div>
-
     <div class="pub">
       <strong>Dantuluri, N.</strong>, Ghatti, S., Prasad, A., Sherear, C., Kuling, G., Zitnik, M. (2025). Predicting Survival Outcomes for Patients with Uterine Corpus Endometrial Carcinoma using Machine-Learning Based Risk Prediction Models. <em>Manuscript in Preparation.</em>
     </div>
-
     <div class="pub">
       <strong>Dantuluri, N.</strong>, Davis, P., Williams, M., Fallon, MK., Patel, CP., Manrai, AK. (2025). Mobile Health Van data resource for census-tract estimates and exploration of population health data. <em>Manuscript in Preparation.</em>
     </div>
-
     <div class="pub">
       <strong>Dantuluri, N.</strong> (2025). Restricted Supply, Rising Demand: Reimagining Prescription Stimulant Regulation Amid a National Shortage. <em>Journal of Law, Medicine, and Ethics.</em>
     </div>
-
     <div class="pub">
       Campbell, K., Wilson, A., Torres, M., <strong>Dantuluri, N.</strong>, Fryer, K. (2024). Understanding the Risk Factors Behind Overdose in Pregnant and Postpartum Patients with Opioid Use Disorder: A Scoping Review. <em>American Journal of Drug and Alcohol Abuse.</em> 51(1), 4–13.
     </div>
-
     <div class="pub">
       Ayalasomayajula, Y., Hesaraghatta, A., <strong>Dantuluri, N.</strong>, et al. (2024). Influence of age and sex on cardiac electrical, functional, and physical alterations in progressive hyperoxia treatment. <em>Journal of Experimental Gerontology.</em> 191(15), 112435.
     </div>
@@ -419,6 +420,113 @@
     <h2>cv</h2>
     <p style="font-size:15px;">Download my full CV: <a href="cv.pdf">cv.pdf</a></p>
   </section>
+
+  <!-- Modal overlay -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeOnOverlay(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <h3 id="modal-title"></h3>
+      <div class="modal-meta" id="modal-meta"></div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    const data = {
+      r1: {
+        title: "ML-Based Stillbirth Risk Prediction",
+        meta: [
+          "Mass General Brigham · Harvard Medical School",
+          "PI(s): Vesela Kovacheva, MD, PhD & Arjun Manrai, PhD",
+          "Aug 2025 – Present · Graduate Thesis"
+        ],
+        body: "Developed and validated longitudinal risk prediction models for stillbirth on ~170,000 pregnancies (~0.4% outcome prevalence) using penalized and ensemble methods — logistic regression, Elastic Net, gradient boosting, and random forest — across 74 computable clinical and longitudinal variables spanning EHR and administrative/claims data. Designed leakage-safe analytic workflows with training-only MICE imputation and cross-validation; selected operating thresholds via Youden's index; compared model discrimination using DeLong's test; externally validated on the nuMoM2b cohort. Conducted association analyses using Firth's penalized logistic regression for odds ratios and Poisson regression for risk ratios. Applied SHAP for interpretability. Contributing to manuscript preparation."
+      },
+      r2: {
+        title: "AI for Electronic Fetal Monitoring",
+        meta: [
+          "Boston Children's Hospital · CAVA Lab",
+          "PI: William La Cava, PhD",
+          "Sep 2024 – May 2026"
+        ],
+        body: "Established statistical baselines for physiological time-series, evaluating large language model and deep learning performance against expert obstetrician consensus for fetal acidemia classification using intrapartum electronic fetal monitoring, with umbilical artery pH as ground truth. Quantified model discrimination (AUROC, balanced accuracy) across multiple pH thresholds; benchmarked zero-shot LLMs against CNN, LSTM, and InceptionTime models and assessed outputs against clinical evaluation criteria defined with domain experts."
+      },
+      r3: {
+        title: "Mobile Health Van Data Resource",
+        meta: [
+          "Harvard Medical School · Manrai-Patel Lab",
+          "PI(s): Arjun Manrai, PhD & Chirag Patel, PhD",
+          "Jun 2023 – Jun 2024 · Undergraduate Summer Fellow"
+        ],
+        body: "Translated stakeholder requirements from the Family Van and Mobile Health Map into data specifications; built an interactive R Shiny dashboard integrating CDC PLACES, HRSA, and GIS sources to model ~45 chronic disease measures from national to census-tract level. Ran iterative testing and feedback cycles with public health researchers and clinicians to ensure the deployed tool met analytic and operational needs. Manuscript in preparation."
+      },
+      r4: {
+        title: "Maternal Opioid Use Disorder in Florida",
+        meta: [
+          "University of South Florida · Marshall Public Health Lab",
+          "PI(s): Jennifer Marshall, PhD & Kimberly Fryer, MD",
+          "Jan 2022 – Apr 2024 · Undergraduate Research Assistant"
+        ],
+        body: "Conducted geospatial analysis and multivariate regression to identify factors associated with maternal opioid use disorder prevalence; findings informed public health strategy. Contributed to a clinical NLP pipeline using ICD-10 codes and text criteria to extract opioid use disorder cases from Tampa General Hospital's EHR, supporting clinical surveillance and quality improvement. Co-authored a scoping review on overdose risk factors in pregnant and postpartum patients with OUD (American Journal of Drug and Alcohol Abuse, 2024)."
+      },
+      r5: {
+        title: "Cardiac Pathophysiology & Hyperoxia in Mice Models",
+        meta: [
+          "University of South Florida",
+          "PI: Srinivas K. Panguluri, PhD",
+          "2023 – 2024"
+        ],
+        body: "Contributed to a study examining the influence of age and sex on cardiac electrical, functional, and physical alterations in progressive hyperoxia treatment using a murine model, with a time course study design. Published in Journal of Experimental Gerontology, 191(15), 112435 (2024)."
+      },
+      p1: {
+        title: "Assessing UCEC Risk via ML-Based Survival Analysis",
+        meta: [
+          "Harvard Medical School",
+          "Advisors: Marinka Zitnik, PhD; Gregory Kuling, PhD; Courtney Shearer",
+          "Jan – May 2025"
+        ],
+        body: "Built machine learning survival models (time-to-event analysis) to predict outcomes for uterine corpus endometrial carcinoma. Developed a full pipeline covering data harmonization, feature engineering, and quality control across heterogeneous datasets. The model integrates clinical variables, copy number variations, and DNA methylation data. Applied Cox proportional hazards and tree-based ML models to assess predictive performance. Led and coordinated a three-person analytic team. Manuscript in preparation."
+      },
+      p2: {
+        title: "ED Patient Goal Concordance",
+        meta: [
+          "Massachusetts Institute of Technology",
+          "Advisors: Leo Anthony Celi, MD & Somnath Bose, MD",
+          "Sep 2024 – Jan 2025"
+        ],
+        body: "Built a pipeline to extract and structure goals-of-care information from unstructured ICU clinical notes in the MIMIC-III database, converting free-text clinical documentation into analyzable data to support care-concordance assessment. Utilized few-shot learning techniques, scalable analysis, and RAG implementation in Azure AI Search Index via text-embedding-ada-002."
+      },
+      p3: {
+        title: "College Students & Technology: Transforming Healthcare",
+        meta: [
+          "University of South Florida",
+          "Advisor: Donna Lee Ettel-Gambino, PhD",
+          "Jan – Apr 2024"
+        ],
+        body: "Designed and ran a one-way MANOVA in SAS to test gender differences across five healthcare-access preferences (insurance status, emergency room, primary care, free clinic, campus health) among nearly 300 college students, identifying a significant multivariate effect (Wilk's Λ = 0.95, p < 0.05). Conducted follow-up one-way ANOVA contrasts showing campus facilities as the leading first-choice provider (59%) and female students significantly more likely than male students to use them (62% vs 48%). Findings were framed around healthcare disparities on college campuses."
+      }
+    };
+
+    function openModal(id) {
+      const d = data[id];
+      document.getElementById('modal-title').textContent = d.title;
+      document.getElementById('modal-meta').innerHTML = d.meta.map(s => `<span>${s}</span>`).join('');
+      document.getElementById('modal-body').textContent = d.body;
+      document.getElementById('modal-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeOnOverlay(e) {
+      if (e.target === document.getElementById('modal-overlay')) closeModal();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
 
 </body>
 </html>
